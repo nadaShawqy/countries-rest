@@ -1,0 +1,156 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    background-color: #222;
+    position: relative;
+    padding: 20px;
+}
+main{
+    margin-top: 100px;
+    font-size: 60px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: bold;
+}
+main::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: rgb(34, 127, 163);
+    border-right: 2px solid rgb(34, 127, 163);
+    animation: animate 5s linear infinite;
+    overflow: hidden;
+}
+@keyframes animate{
+    0%, 10%, 100%{
+        width: 0%;
+    }
+    50%, 60%{
+        width: 100%
+    }
+}
+.up{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    min-width: 100%;
+    font-size: 20px;
+}
+.up .name p{
+    font-size: 40px;
+    text-transform: uppercase;
+    padding: 5px;
+    border-bottom: 3px solid rgb(34, 127, 163);
+    letter-spacing: 1.5px;
+}
+.data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+span{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(240, 233, 233)
+}
+.data .column{
+    min-width: calc(30% - 40px);
+    margin: 10px 30px;
+    text-align:left;
+    position: relative;
+    line-height: 1.5;
+    overflow: hidden;
+    display: inline-block;
+}
+.data .column_flag{
+    min-width: calc(40%- 40px);
+    position: relative;
+}
+img{
+    width: 100%;
+    min-height: 70%;
+    display: inline-block;
+}
+form{
+    background-color: #111;
+    padding: 25px 35px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #000;
+    display: inline-block;
+}
+form select{
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    outline: none;
+}
+form button{
+    padding: 10px;
+    background-color: rgb(34, 127, 163);
+    border: 1px solid rgb(34, 127, 163);
+    border-radius: 0px 5px 5px 0px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 1000px) {
+    body{
+        padding: 50px 20px;
+    }
+    .data{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .column{
+        min-width: calc(50% - 40px);
+    }
+    .column.column_flag{
+        max-width: 70%;
+    }
+}
+@media screen and (max-width : 600px) {
+    select{
+        width: 70%
+    }
+    .up .name p{
+        font-size: 25px;
+    }
+    .data{
+        flex-direction: column;
+    }
+    .column{
+        min-width: 90%;
+        margin: 200px
+    }
+    main{
+        font-size: 45px;
+        display: inline-block;
+    }
+}
+@media screen and (max-width : 400px) {
+    select{
+        width: 70%
+    }
+    .up .name p{
+        font-size: 20px;
+    }
+    form{
+        padding: 0;
+        box-shadow: none;
+        background:none;
+    }
+    main{
+        font-size: 30px;
+    }
+}
